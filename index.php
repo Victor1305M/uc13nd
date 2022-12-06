@@ -23,6 +23,7 @@
         <a name="destaques">&nbsp;</a>
         <?php include "produtos_destaque.php"; ?>
         <!-- Area dos produtos em geral -->
+        <a name="Produtos">&nbsp;</a>
         <?php include "produtos_geral.php"; ?>
 
         <!-- Rodapé -->
@@ -34,7 +35,7 @@
 </body>
 
 <!-- Link arquivos Bootstrap js -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js%22%3E</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
 <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
