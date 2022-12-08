@@ -12,8 +12,12 @@ $nrows = $lista->num_rows;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TIPOS</title>
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/estilo.css">
 </head>
-<body>
+<body class="fundofixo">
+    <?php include "menu_adm.php"; ?>
+    main
     
 </body>
 </html>
