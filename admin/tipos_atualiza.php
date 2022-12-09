@@ -28,10 +28,10 @@ if($_POST){
     $imagem_produto     =   $nome_img;
 
     // Campo do form para filtrar o registro (WHERE)
-    $id      = $_POST['id_produto'] ;
+    $id      = $_POST['id_tipo'] ;
 
     // Consulta SQL para atualização de dados
-    $updateSQL  =   "UPDATE tbprodutos
+    $updateSQL  =   "UPDATE tbtipos
                         SET id_tipo_produto     =   '$id_tipo_produto',
                             destaque_produto    =   '$destaque_produto',
                             descri_produto      =   '$descri_produto',
@@ -41,15 +41,15 @@ if($_POST){
                         WHERE id_produto = $id ";
     $resultado  =   $conn->query($updateSQL);
     if ( $resultado ) {
-        header("Location: produtos_lista.php");
+        header("Location: tipos_lista.php");
     }
     
 };
 
 // Consulta para trazer e filtrar os dados
-if ($_GET){$id_form  =   $_GET['id_produto'];}
+if ($_GET){$id_form  =   $_GET['id_tipo'];}
 else{$id_form = 0;}
-$lista          =   $conn->query("SELECT * FROM tbprodutos WHERE id_produto = $id_form");
+$lista          =   $conn->query("SELECT * FROM tbtipos WHERE id_tipo = $id_form");
 $row            =   $lista->fetch_assoc();
 $totalRows      =   ($lista)->num_rows;
 
@@ -97,9 +97,9 @@ $totalRows_fk   =   ($lista_fk)->num_rows;
             <!-- Abre thumbnail -->
             <div class="thumbnail">
                 <div class="alert alert-danger" role="alert">
-                    <form action="produtos_atualiza.php" id="form_produto_atualiza" name="form_produto_atualiza" method="post" enctype="multipart/form-data">
+                    <form action="tipos_atualiza.php" id="form_tipos_atualiza" name="form_tipos_atualiza" method="post" enctype="multipart/form-data">
                         <!-- Inserir o campo id_produto OCULTO para uso em filtros -->
-                        <input type="hidden" name="id_produto" id="id_produto" value="<?php echo $row['id_produto']; ?>">
+                        <input type="hidden" name="id_tipo" id="id_tipo" value="<?php echo $row['id_tipo']; ?>">
 
                         <!-- Select id_tipo_produto -->
                         <label for="id_tipo_produto">Tipo:</label>
